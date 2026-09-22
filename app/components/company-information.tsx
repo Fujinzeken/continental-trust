@@ -12,14 +12,14 @@ const corporateRows = [
 
 const regulatoryRows = [
   { label: "NAIC number", value: "18010" },
-  { label: "NAIC group code", value: "0000" },
+  // { label: "NAIC group code", value: "0000" },
   { label: "SC license / charter no.", value: "526251536" },
-  { label: "Certificate of Authority", value: "Approved 09/11/2026" },
+  // { label: "Certificate of Authority", value: "Approved 09/11/2026" },
   {
     label: "States authorized",
     value: "South Carolina (domicile); additional states to be assigned",
   },
-  { label: "Financial strength rating", value: "Not yet rated" },
+  // { label: "Financial strength rating", value: "Not yet rated" },
   {
     label: "Domiciliary regulator",
     value: "South Carolina Dept. of Insurance",
@@ -71,7 +71,7 @@ export default function CompanyInformation() {
           ))}
         </div>
 
-        <div className="mt-8 overflow-hidden rounded-lg border border-navy/10 bg-white">
+        {/* <div className="mt-8 overflow-hidden rounded-lg border border-navy/10 bg-white">
           <div className="bg-sand px-7 py-5">
             <h3 className="text-[16px] font-semibold text-navy">
               Verifying documents
@@ -112,7 +112,7 @@ export default function CompanyInformation() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
