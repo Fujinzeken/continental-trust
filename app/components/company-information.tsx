@@ -35,7 +35,7 @@ export default function CompanyInformation() {
           For brokers, regulators, and carriers verifying the company.
         </h2>
         <p className="mt-6 max-w-xl text-[17px] leading-[1.7] text-gray-600">
-          Key identifying and regulatory details for due-diligence review.
+          Key identifying and regulatory details for due-diligence review
         </p>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
