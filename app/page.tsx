@@ -10,18 +10,14 @@ import Footer from "./components/footer";
 
 export default function Home() {
   return (
-    <div id="top" className="flex flex-1 flex-col">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Coverage />
-        <Approach />
-        <WhoWeCover />
-        <CompanyInformation />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <main>
+      <Hero />
+      <About />
+      <Coverage />
+      <Approach />
+      <WhoWeCover />
+      <CompanyInformation />
+      <Contact />
+    </main>
   );
 }

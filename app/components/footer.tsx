@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Logo from "./logo";
 
 const companyLinks = [
@@ -16,8 +17,8 @@ export default function Footer() {
           <div>
             <Logo variant="footer" />
             <p className="mt-6 max-w-xs text-[15px] leading-[1.7] text-white/70">
-              A specialty insurer providing commercial auto liability coverage to
-              motor carriers. Domiciled in South Carolina.
+              A specialty insurer providing commercial auto liability coverage
+              to motor carriers. Domiciled in South Carolina.
             </p>
           </div>
 
@@ -85,22 +86,34 @@ export default function Footer() {
             Liability Risk Retention Act of 1986. Risk retention groups may not
             be subject to all of the insurance laws and regulations of every
             state in which they operate, and may not participate in state
-            insurance guaranty funds. Coverage is provided solely under the terms
-            of the issued policy.
+            insurance guaranty funds. Coverage is provided solely under the
+            terms of the issued policy.
           </p>
 
           <div className="mt-8 flex flex-col gap-4 text-[14px] text-white/60 sm:flex-row sm:items-center sm:justify-between">
-            <p>© 2026 Continental Trust Risk Retention Group. All rights reserved.</p>
+            <p>
+              © 2026 Continental Trust Risk Retention Group. All rights
+              reserved.
+            </p>
             <div className="flex gap-2">
-              <a href="#top" className="transition-colors hover:text-white">
+              <Link
+                href="/privacy-policy"
+                className="transition-colors hover:text-white"
+              >
                 Privacy policy
-              </a>
+              </Link>
               <span>·</span>
-              <a href="#top" className="transition-colors hover:text-white">
+              <Link
+                href="/terms-of-use"
+                className="transition-colors hover:text-white"
+              >
                 Terms of use
-              </a>
+              </Link>
               <span>·</span>
-              <a href="#company-information" className="transition-colors hover:text-white">
+              <a
+                href="#company-information"
+                className="transition-colors hover:text-white"
+              >
                 Licensing &amp; disclosures
               </a>
             </div>
