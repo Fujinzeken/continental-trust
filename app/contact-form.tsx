@@ -11,6 +11,7 @@ type Status = "idle" | "submitting" | "success" | "error";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
+  const [smsConsent, setSmsConsent] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -38,6 +39,7 @@ export default function ContactForm() {
         }),
       });
       setStatus("success");
+      setSmsConsent(false);
       form.reset();
     } catch {
       setStatus("error");
@@ -109,13 +111,6 @@ export default function ContactForm() {
           className={`${inputClass} resize-y`}
         />
       </div>
-      <button
-        type="submit"
-        disabled={status === "submitting"}
-        className="rounded-md bg-navy px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-navy-deep disabled:cursor-not-allowed disabled:opacity-60"
-      >
-        {status === "submitting" ? "Sending…" : "Send inquiry"}
-      </button>
       <label
         htmlFor="sms-consent"
         className="flex items-start gap-3 text-[13.5px] leading-[1.6] text-ink/75"
@@ -126,6 +121,8 @@ export default function ContactForm() {
           type="checkbox"
           required
           className="mt-0.5 h-4 w-4 shrink-0 accent-navy"
+          checked={smsConsent}
+          onChange={(e) => setSmsConsent(e.target.checked)}
         />
         <span>
           By checking this box, you agree to receive SMS messages from
@@ -167,6 +164,13 @@ export default function ContactForm() {
           us directly.
         </p>
       )}
+      <button
+        type="submit"
+        disabled={status === "submitting" || !smsConsent}
+        className="rounded-md bg-navy px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-navy-deep disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        {status === "submitting" ? "Sending…" : "Send inquiry"}
+      </button>
     </form>
   );
 }
