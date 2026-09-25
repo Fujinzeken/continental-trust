@@ -119,7 +119,6 @@ export default function ContactForm() {
           id="sms-consent"
           name="smsConsent"
           type="checkbox"
-          required
           className="mt-0.5 h-4 w-4 shrink-0 accent-navy"
           checked={smsConsent}
           onChange={(e) => setSmsConsent(e.target.checked)}
@@ -166,7 +165,7 @@ export default function ContactForm() {
       )}
       <button
         type="submit"
-        disabled={status === "submitting" || !smsConsent}
+        disabled={status === "submitting"}
         className="rounded-md bg-navy px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-navy-deep disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "submitting" ? "Sending…" : "Send inquiry"}
